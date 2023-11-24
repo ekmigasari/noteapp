@@ -1,4 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-pink-300 to-transparent min-h-screen bg-fixed max-w-3xl m-auto py-8 px-6 font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply flex self-stretch flex-col justify-end items-end gap-3 px-8 py-6 rounded-2xl bg-pink-100 drop-shadow-lg font-sans;
+  }
+
+  .btnPrimary {
+    @apply flex justify-center items-center px-4 py-1 rounded-3xl drop-shadow-md font-sans text-sm gap-1;
+  }
+  .btnBox {
+    @apply justify-end items-end gap-2 inline-flex;
+  }
+  .textArea {
+    @apply self-stretch text-lg text-zinc-800 font-sans;
+  }
+}
