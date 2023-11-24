@@ -15,7 +15,10 @@ export default function Page() {
       </div>
 
       <div className="card bg-white min-h-[196px] justify-between">
-        <div className="textArea">Mau curhat apa hari ini?</div>
+        <div className="textArea">
+          Tuangkan keluh kesahmu, mari curcol bersamaku! Mau curhat apa hari
+          ini?
+        </div>
         <div className="btnPrimary bg-green-600 text-white text-lg">
           <div>
             <MessagesSquare size={20} color="#ffffff" />

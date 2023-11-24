@@ -8,7 +8,7 @@ export const NoteInput = () {
     async function createNote(){
         const res = await fetch("", {
                 method: "POST""
-header:
+                header:
 
         })
     }
