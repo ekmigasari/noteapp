@@ -34,6 +34,7 @@ export const NoteInput = () => {
       <div className="card bg-white min-h-[196px] justify-between">
         <input
           onChange={(e) => setNote(e.target.value)}
+          value={note}
           className="textArea"
           placeholder="Tuangkan keluh kesahmu, mari curcol bersamaku! Mau curhat apa hari ini?"
         />
