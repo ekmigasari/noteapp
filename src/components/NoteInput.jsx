@@ -1,6 +1,6 @@
 "use client";
 
-import { MessagesSquare, Trash, FileEdit } from "lucide-react";
+import { MessagesSquare } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -25,8 +25,8 @@ export const NoteInput = () => {
     );
     const data = await res.json();
     console.log(data);
-    setNote("");
     router.refresh();
+    setNote("");
   }
 
   return (

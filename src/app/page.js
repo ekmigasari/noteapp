@@ -17,7 +17,7 @@ export default async function Page() {
 
   return (
     <main>
-      <div class="flex flex-col justify-center items-center gap-2 mb-8">
+      <div className="flex flex-col justify-center items-center gap-2 mb-8">
         <div className="text-center text-7xl font-bold tracking-normal font-sans text-pink-900 drop-shadow-md">
           CURCOL
         </div>
@@ -28,7 +28,7 @@ export default async function Page() {
 
       <NoteInput />
 
-      <div class="border-t border-white my-12"></div>
+      <div className="border-t border-white my-12"></div>
 
       <section className="flex flex-col-reverse gap-4">
         {items.map(({ id, content }) => {
