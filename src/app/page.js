@@ -35,6 +35,9 @@ export default async function Page() {
           return <NoteCard key={id} id={id} content={content} />;
         })}
       </section>
+      <footer className="text-zinc-400 text-sm text-center my-8">
+        xmigas - devscale #sycnsquad
+      </footer>
     </main>
   );
 }
