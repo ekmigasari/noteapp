@@ -14,14 +14,14 @@
   .card {
     @apply flex self-stretch flex-col justify-end items-end gap-3 px-8 py-6 rounded-2xl bg-pink-100 drop-shadow-lg font-sans;
   }
-
   .btnPrimary {
     @apply flex justify-center items-center px-4 py-1 rounded-3xl drop-shadow-md font-sans text-sm gap-1;
   }
+
   .btnBox {
     @apply justify-end items-end gap-2 inline-flex;
   }
   .textArea {
-    @apply self-stretch text-lg text-zinc-800 font-sans;
+    @apply self-stretch text-lg text-zinc-800 font-sans px-1 bg-transparent;
   }
 }

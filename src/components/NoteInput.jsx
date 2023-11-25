@@ -1,5 +1,6 @@
 "use client";
 
+import { MessagesSquare, Trash, FileEdit } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -24,14 +25,28 @@ export const NoteInput = () => {
     );
     const data = await res.json();
     console.log(data);
+    setNote("");
     router.refresh();
   }
 
   return (
     <div>
-      <h3>Input</h3>
-      <input onChange={(e) => setNote(e.target.value)} />
-      <button onClick={CreateNote}>Save Note</button>
+      <div className="card bg-white min-h-[196px] justify-between">
+        <input
+          onChange={(e) => setNote(e.target.value)}
+          className="textArea"
+          placeholder="Tuangkan keluh kesahmu, mari curcol bersamaku! Mau curhat apa hari ini?"
+        />
+        <button
+          onClick={CreateNote}
+          className="btnPrimary bg-green-600 text-white text-lg hover:bg-green-500 active:bg-green-800"
+        >
+          <div>
+            <MessagesSquare size={20} color="#ffffff" />
+          </div>
+          <div>Post</div>
+        </button>
+      </div>
     </div>
   );
 };
