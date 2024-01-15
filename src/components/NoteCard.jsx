@@ -11,24 +11,24 @@ export const NoteCard = ({ id, content }) => {
   const [currentContent, setCurrentContent] = useState(content);
 
   async function handleDelete() {
-    await fetch(
-      `https://devscale-mockapi.fly.dev/api/collections/notes/records/${id}`,
-      {
-        method: "DELETE",
-      }
-    );
+    await fetch("https://v1.appbackend.io/v1/rows/jJ5wMdzaLYEI", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify([id]),
+    });
     router.refresh();
   }
 
   async function handleUpdate() {
-    const res = await fetch(
-      `https://devscale-mockapi.fly.dev/api/collections/notes/records/${id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: currentContent }),
-      }
-    );
+    const res = await fetch("https://v1.appbackend.io/v1/rows/jJ5wMdzaLYEI", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ _id: id, name: currentContent }),
+    });
     const data = await res.json();
     setOnEdit(false);
     router.refresh();
@@ -38,7 +38,7 @@ export const NoteCard = ({ id, content }) => {
     <div className="card">
       <div className="self-stretch font-bold text-sm ">Dear teman curhat,</div>
       {onEdit ? (
-        <input
+        <textarea
           value={currentContent}
           onChange={(e) => setCurrentContent(e.target.value)}
           className="textArea"

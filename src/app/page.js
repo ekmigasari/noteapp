@@ -1,19 +1,17 @@
 import { NoteCard } from "@/components/NoteCard";
 import { NoteInput } from "@/components/NoteInput";
+import { ChevronsLeftIcon } from "lucide-react";
 
 async function getNotes() {
-  const rest = await fetch(
-    "https://devscale-mockapi.fly.dev/api/collections/notes/records?filter=(user='ekmigasari@gmail.com')",
-    {
-      cache: "no-store",
-    }
-  );
-  const data = await rest.json();
-  return data;
+  const rest = await fetch("https://v1.appbackend.io/v1/rows/jJ5wMdzaLYEI", {
+    cache: "no-store",
+  });
+  const res = await rest.json();
+  return res;
 }
 
 export default async function Page() {
-  const { items } = await getNotes();
+  const { data } = await getNotes();
 
   return (
     <main>
@@ -30,9 +28,9 @@ export default async function Page() {
 
       <div className="border-t border-white my-12"></div>
 
-      <section className="flex flex-col-reverse gap-4">
-        {items.map(({ id, content }) => {
-          return <NoteCard key={id} id={id} content={content} />;
+      <section className="flex flex-col gap-4">
+        {data.map(({ _id, name }) => {
+          return <NoteCard key={_id} id={_id} content={name} />;
         })}
       </section>
       <footer className="text-zinc-400 text-sm text-center my-8">
